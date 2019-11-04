@@ -99,7 +99,7 @@ $throttle->throttle('api.request', 1000, 86400000);
 
 __NB:__ The current implementation of the `TimeWindow` throttle will only work on 64-bit architectures!
 
-Storage
+存储引擎
 -------
 
 提供5个储存引擎
