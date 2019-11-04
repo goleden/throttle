@@ -1,24 +1,20 @@
-Stiphle
+Throttle
 ======
 
-Install via Composer
+Composer安装
 -------
 
 ```
-composer require davedevelopment/stiphle
+暂未提交
 ```
 
-What is it?
+是什么？
 -----------
 
-Stiphle is a little library to try and provide an easy way of throttling/rate limit requests, for those without fancy hardware etc.
+提供一种简单的限制/速率限制请求的一个类库。
 
-How does it work?
+能做什么？
 -----------------
-
-You create a throttle, and ask it how long you should wait. For example, given
-that $identifier is some means of identifying whatever it is you're throttling,
-and you want to throttle it to 5 requests per second:
 
 ``` php
 <?php
@@ -77,7 +73,7 @@ for(;;) {
 
 ```
 
-Throttle Strategies
+节流策略
 -------------------
 
 There are currently two types of throttles, [Leaky
@@ -106,33 +102,16 @@ __NB:__ The current implementation of the `TimeWindow` throttle will only work o
 Storage
 -------
 
-Stiphle currently ships with 5 storage engines
+提供5个储存引擎
 
-* In process
+* in process，进程内存储（默认）
 * APC
 * Memcached
 * Doctrine Cache
 * Redis
-
-Stiphle uses the in process storage by default. A different storage engine can
-be injected after object creation.
 
 ``` php
 $throttle = new Stiphle\Throttle\LeakyBucket();
 $storage = new \Stiphle\Storage\Memcached(new \Memcached());
 $throttle->setStorage($storage);
 ```
-
-Todo
-----
-
-* More Tests!
-* Decent *Unit* tests
-* More throttling methods
-* More storage adapters, the current ones are a little volatile, Mongo,
-  Cassandra, MemcacheDB etc
-
-Copyright
----------
-
-Copyright (c) 2011 Dave Marshall. See LICENCE for further details
