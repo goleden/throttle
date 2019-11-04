@@ -5,7 +5,7 @@ Composer安装
 -------
 
 ```
-暂未提交
+composer require davedevelopment/stiphle
 ```
 
 是什么？
