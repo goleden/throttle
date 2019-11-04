@@ -81,21 +81,18 @@ for(;;) {
 ``` php
 
 /**
- * Throttle to 1000 per *rolling* 24 hours, e.g. the counter will not reset at
- * midnight
+ * 每24小时限制1000次
  */
 $throttle = new Stiphle\Throttle\LeakyBucket;
 $throttle->throttle('api.request', 1000, 86400000);
 
 /**
- * Throttle to 1000 per calendar day, counter will reset at midnight
+ * 自然天，每天限制1000次
  */
 $throttle = new Stiphle\Throttle\TimeWindow;
 $throttle->throttle('api.request', 1000, 86400000);
 
 ```
-
-__NB:__ The current implementation of the `TimeWindow` throttle will only work on 64-bit architectures!
 
 存储引擎
 -------
