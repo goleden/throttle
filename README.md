@@ -76,9 +76,7 @@ for(;;) {
 节流策略
 -------------------
 
-There are currently two types of throttles, [Leaky
-Bucket](http://en.wikipedia.org/wiki/Leaky_bucket) and a simple fixed time
-window.
+目前有两种节流方式，, LeakyBucket和TimeWindow
 
 ``` php
 
